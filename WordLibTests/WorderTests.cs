@@ -1,3 +1,5 @@
+using System.Diagnostics.Metrics;
+using System.Drawing;
 using WordLib;
 
 namespace WordLibTests
@@ -43,6 +45,54 @@ namespace WordLibTests
             // Act
             // Assert
             Assert.ThrowsException<ArgumentNullException>(() => Worder.IsPalindrome(entry));
+        }
+    }
+
+    [TestClass]
+    public class CounterTests
+    {
+        [TestMethod]
+        public void CharCounter_GivenString_ShouldReturnAmountOfCharacters()
+        {
+            // Arrange
+            Counter counter = new Counter();
+            string entry = "radar";
+            int expected = 5;
+
+            // Act
+            var actual = Counter.CharCounter(entry);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+            
+        }
+
+        [TestMethod]
+        public void CharCounter_GivenComplexString_ShouldReturnAmountOfCharacters()
+        {
+            // Arrange
+            Counter counter = new Counter();
+            string entry = "Hello! I am 23 years old.";
+            int expected = 25;
+
+            // Act
+            var actual = Counter.CharCounter(entry);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void CharCounter_GivenNullString_ShouldThrowNullException()
+        {
+            // Arrange
+            Counter counter = new Counter();
+            string entry = null;
+
+            // Act
+            // Assert
+            Assert.ThrowsException<ArgumentNullException>(() => Counter.CharCounter(entry));
         }
     }
 }
