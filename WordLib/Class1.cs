@@ -9,7 +9,7 @@
     {
         public string IsPalidrome(string input)
         {
-            throw new NotImplementedException();
+            return input;
         }
     }
 }
