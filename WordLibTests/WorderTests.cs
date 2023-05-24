@@ -11,13 +11,12 @@ namespace WordLibTests
             // Arrange
             Worder worder = new Worder();
             string entry = "radar";
-            string expected = "radar"; 
 
             // Act
-            var actual = worder.IsPalindrome(entry);
+            var actual = Worder.IsPalindrome(entry);
 
             // Assert
-            Assert.AreEqual(expected, actual);
+            Assert.IsTrue(actual);
         }
 
         [TestMethod]
@@ -26,13 +25,12 @@ namespace WordLibTests
             // Arrange
             Worder worder = new Worder();
             string entry = "test";
-            string expected = "tset";
 
             // Act
-            var actual = worder.IsPalindrome(entry);
+            var actual = Worder.IsPalindrome(entry);
 
             // Assert
-            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(actual);
         }
 
         [TestMethod]
@@ -41,14 +39,10 @@ namespace WordLibTests
             // Arrange
             Worder worder = new Worder();
             string entry = null;
-            string expected = null;
 
             // Act
-            Assert.ThrowsException<ArgumentNullException>(() => worder.IsPalindrome(entry));
-            string? actual = null;
-
             // Assert
-            Assert.AreEqual(expected, actual);
+            Assert.ThrowsException<ArgumentNullException>(() => Worder.IsPalindrome(entry));
         }
     }
 }

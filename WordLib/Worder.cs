@@ -2,16 +2,14 @@
 {
     public class Worder
     {
-        public string IsPalindrome(string input)
+        public static bool IsPalindrome(string input)
         {
             if (input == null)
             {
-                throw new ArgumentNullException(input);
+                throw new ArgumentNullException("input");
             }
-            else
-            {
-                return input;
-            }
+            // Joins the characters inside the empty string
+            return string.Join(string.Empty, input.Reverse()) == input;
         }
     }
 }
