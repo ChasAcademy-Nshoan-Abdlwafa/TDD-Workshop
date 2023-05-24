@@ -8,7 +8,6 @@
             {
                 throw new ArgumentNullException("input");
             }
-            // Joins the characters inside the empty string
             return string.Join(string.Empty, input.Reverse()) == input;
         }
     }
