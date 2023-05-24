@@ -4,4 +4,12 @@
     {
 
     }
+
+    public class Worder
+    {
+        public string IsPalidrome(string input)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
